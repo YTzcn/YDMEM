@@ -21,5 +21,12 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Veri_Ekle veri = new Veri_Ekle();
+            veri.Show();
+            this.Hide();
+        }
     }
 }

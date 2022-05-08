@@ -47,6 +47,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.button1.TabIndex = 0;
             this.button1.Text = "Veri Ekle ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
