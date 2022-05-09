@@ -84,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Veri Ekle.resx">
       <DependentUpon>Veri Ekle.cs</DependentUpon>
@@ -101,6 +102,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20482556.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18E6.tmp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayarlar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\çıkış.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anasayfa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

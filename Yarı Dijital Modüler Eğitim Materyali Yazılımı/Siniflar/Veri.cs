@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
 {
-    class Veri
+    public class Veri
     {
         [Key]
         public int Id { get; set; }

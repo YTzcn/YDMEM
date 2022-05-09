@@ -28,5 +28,10 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             veri.Show();
             this.Hide();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
