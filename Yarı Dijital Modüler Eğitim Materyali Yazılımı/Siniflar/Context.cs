@@ -10,5 +10,6 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
     public class Context : DbContext
     {
         public DbSet<Veri> Veris { get; set; }
+        public DbSet<VeriSet> VeriSets { get; set; }
     }
 }

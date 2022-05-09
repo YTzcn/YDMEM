@@ -11,50 +11,33 @@ using System.Windows.Forms;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 {
-    public partial class Form1 : Form
+    public partial class Ayarlar : Form
     {
-        public Form1()
+        public Ayarlar()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Ayarlar_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Giriş giriş = new Giriş();
-            giriş.Show();
-            this.Hide();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0); 
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Ayarlar ayarlar = new Ayarlar();
-            ayarlar.Show();
-            
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
+          
+            listView1.Columns.Add("Şekil", 550);
+            listView1.Columns.Add("Veri", 1920);
+            listView1.Items.Add("A", 0);
+            listView1.Items.Add("B", 1);
+            listView1.Items.Add("C", 2);
+            listView1.Items.Add("Türkçe Dersi", 3);      
+            listView1.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -65,6 +48,11 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

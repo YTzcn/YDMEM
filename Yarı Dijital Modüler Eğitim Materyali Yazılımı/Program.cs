@@ -16,7 +16,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new  Giriş());
         }
     }
 }

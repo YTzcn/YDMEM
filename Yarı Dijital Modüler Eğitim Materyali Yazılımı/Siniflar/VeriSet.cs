@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
 {
-    public class Veri
+     public class VeriSet
     {
         [Key]
         public int Id { get; set; }
-        public string SekilVerisi { get; set; }
-        public string VeriTuru{ get; set; }
-         
+        public string SetAdı{ get; set; }
+
+        public ICollection<Veri> veris { get; set; }
     }
 }
