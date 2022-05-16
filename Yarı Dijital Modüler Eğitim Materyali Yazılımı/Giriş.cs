@@ -10,7 +10,6 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
             InitializeComponent();
         }
-        int mousey, mousex;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
