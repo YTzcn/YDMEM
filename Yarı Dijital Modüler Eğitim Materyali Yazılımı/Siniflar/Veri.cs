@@ -12,7 +12,10 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
         [Key]
         public int Id { get; set; }
         public string SekilVerisi { get; set; }
-        public string VeriTuru{ get; set; }
-         
+        public string  BaglantıVerisi { get; set; }
+        public string  FotografVerisi { get; set; }
+        public string  SesVerisi { get; set; }
+        public string  YaziVerisi { get; set; }
+        public string  VideoVerisi { get; set; }
     }
 }

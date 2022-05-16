@@ -25,7 +25,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -42,14 +42,14 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void button12_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0); 
+            Environment.Exit(0);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Ayarlar ayarlar = new Ayarlar();
             ayarlar.Show();
-            
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -66,5 +66,69 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLink_MouseEnter(object sender, EventArgs e)
+        {
+            btnLink.BackgroundImage = Properties.Resources.global;
+        }
+
+        private void btnLink_MouseLeave(object sender, EventArgs e)
+        {
+            btnLink.BackgroundImage = Properties.Resources.internet;
+        }
+
+        private void btnYT_MouseEnter(object sender, EventArgs e)
+        {
+            btnYT.BackgroundImage = Properties.Resources.youtube;
+        }
+
+        private void btnYT_MouseLeave(object sender, EventArgs e)
+        {
+
+            btnYT.BackgroundImage = Properties.Resources.Video;
+        }
+
+        private void btnSes_MouseEnter(object sender, EventArgs e)
+        {
+            btnSes.BackgroundImage = Properties.Resources.musical_note;
+        }
+
+        private void btnSes_MouseLeave(object sender, EventArgs e)
+        {
+
+            btnSes.BackgroundImage = Properties.Resources.Ses;
+        }
+
+        private void btnFoto_MouseEnter(object sender, EventArgs e)
+        {
+            btnFoto.BackgroundImage = Properties.Resources.insert_picture_icon;
+        }
+
+        private void btnFoto_MouseLeave(object sender, EventArgs e)
+        {
+            btnFoto.BackgroundImage = Properties.Resources.Fotoğraf;
+        }
+
+        private void btnYazi_MouseEnter(object sender, EventArgs e)
+        {
+            btnYazi.BackgroundImage = Properties.Resources.paper;
+        }
+
+        private void btnYazi_MouseLeave(object sender, EventArgs e)
+        {
+
+            btnYazi.BackgroundImage = Properties.Resources.Yazı;
+        }
     }
+
 }

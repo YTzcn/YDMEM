@@ -152,6 +152,30 @@
   <ItemGroup>
     <None Include="Resources\Yazı.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\global.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-picture-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Şekiller\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
