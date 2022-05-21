@@ -29,7 +29,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             sifre = textBox2.Text;
             if (kadi == "suleymankoc@gmail.com" && sifre == "123")
             {
-                Form1 form1 = new Form1();
+                t form1 = new t();
                 form1.Show();
                 this.Hide();
             }

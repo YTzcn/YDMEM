@@ -133,6 +133,16 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Green_Light_Icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("Green_Light_Icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -206,6 +216,16 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties {
         internal static System.Drawing.Bitmap paper {
             get {
                 object obj = ResourceManager.GetObject("paper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Red_Light_Icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("Red_Light_Icon.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 {
-    public partial class Form1 : Form
+    public partial class t : Form
     {
-        public Form1()
+        public t()
         {
             InitializeComponent();
         }

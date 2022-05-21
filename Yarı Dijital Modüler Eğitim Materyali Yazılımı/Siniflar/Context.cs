@@ -11,5 +11,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
     {
         public DbSet<Veri> Veris { get; set; }
         public DbSet<VeriSet> VeriSets { get; set; }
+        public DbSet<Sekiller> Sekillers{ get; set; }
+
     }
 }

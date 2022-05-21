@@ -1,7 +1,7 @@
 ﻿
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 {
-    partial class Form1
+    partial class t
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -45,9 +45,12 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.btnYazi = new System.Windows.Forms.Button();
             this.btnLink = new System.Windows.Forms.Button();
             this.FList = new System.Windows.Forms.ImageList(this.components);
+            this.pbDurum = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDurum)).BeginInit();
             this.SuspendLayout();
             // 
             // btnYT
@@ -247,7 +250,19 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.FList.ImageSize = new System.Drawing.Size(16, 16);
             this.FList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // Form1
+            // pbDurum
+            // 
+            this.pbDurum.BackColor = System.Drawing.Color.Transparent;
+            this.pbDurum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbDurum.Image = global::Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties.Resources.Green_Light_Icon_svg;
+            this.pbDurum.Location = new System.Drawing.Point(1343, 38);
+            this.pbDurum.Name = "pbDurum";
+            this.pbDurum.Size = new System.Drawing.Size(52, 50);
+            this.pbDurum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDurum.TabIndex = 12;
+            this.pbDurum.TabStop = false;
+            // 
+            // t
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,6 +270,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.BackgroundImage = global::Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties.Resources._20482556;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1407, 729);
+            this.Controls.Add(this.pbDurum);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnFoto);
@@ -265,7 +281,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Form1";
+            this.Name = "t";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -273,6 +289,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDurum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +311,8 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         private System.Windows.Forms.Button btnYazi;
         private System.Windows.Forms.Button btnLink;
         public System.Windows.Forms.ImageList FList;
+        private System.Windows.Forms.PictureBox pbDurum;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

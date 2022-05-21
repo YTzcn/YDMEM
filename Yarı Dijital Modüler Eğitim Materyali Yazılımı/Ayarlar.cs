@@ -28,19 +28,14 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void Ayarlar_Load(object sender, EventArgs e)
         {
-            //var degerler = context.VeriSets.ToList();
-            //foreach (var x in degerler)
-            //{
-            //    lbxSets.Items.Add(x.SetAdı);
-            //}
+            listView1.Columns.Add("Setler");
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            var setler = context.VeriSets.ToList();
 
-            listView1.Columns.Add("Şekil", 550);
-            listView1.Columns.Add("Veri", 1920);
-            listView1.Items.Add("A", 0);
-            listView1.Items.Add("B", 1);
-            listView1.Items.Add("C", 2);
-            listView1.Items.Add("Türkçe Dersi", 3);
-            listView1.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+            foreach (var item in setler)
+            {
+                listView1.Items.Add(item.SetAdı);
+            }
 
         }
 
@@ -72,9 +67,24 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void lbxSets_MouseClick(object sender, MouseEventArgs e)
         {
-            string seçim = lbxSets.Text;
-            var YeniDeger = context.VeriSets.Where(x=>x.SetAdı==seçim).Select(z=>z.Id);
+           
+            
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
