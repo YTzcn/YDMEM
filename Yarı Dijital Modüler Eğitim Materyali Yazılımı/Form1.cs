@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 {
+
     public partial class t : Form
     {
+        Context context = new Context();
         public t()
         {
             InitializeComponent();
@@ -20,6 +16,13 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            btnFoto.Enabled = false;
+            btnLink.Enabled = false;
+            btnSes.Enabled = false;
+            btnYazi.Enabled = false;
+            btnYT.Enabled = false;
+            
+
 
         }
 
@@ -128,6 +131,70 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
 
             btnYazi.BackgroundImage = Properties.Resources.Yazı;
+        }
+        Form1
+        private void TKontrol_Tick(object sender, EventArgs e)
+
+        {
+            
+            if ()
+            {
+
+            }
+            spArduino.Open();
+            string yazı = spArduino.ReadLine();
+            yazı += spArduino.ReadLine();
+            string[] pot = yazı.Split('-');
+            for (int i = 0; i < pot.Length; i++)
+            {
+                pot[i] = pot[i].Replace("{", "");
+                pot[i] = pot[i].Replace("}", "");
+                pot[i] = pot[i].Replace("\r", "");
+
+
+            }
+            for (int i = 0; i < pot.Length; i++)
+            {
+                lbxVeriler.Items.Add(pot[i]);
+            }
+            lbxVeriler.Items.Clear();
+            if (lbxVeriler.SelectedIndex.ToString() == "-1")
+            {
+
+
+                for (int i = 0; i < pot.Length; i++)
+                {
+                    pot[i] = Convert.ToInt32(pot[i], 2).ToString();
+                    lbxVeriler.Items.Add(pot[i]);
+                }
+            }
+            else
+            {
+                btnFoto.Enabled = true;
+                btnLink.Enabled = true;
+                btnSes.Enabled = true;
+                btnYazi.Enabled = true;
+                btnYT.Enabled = true;
+
+
+            }
+            spArduino.Close();
+
+
+
+
+
+
+
+        }
+
+        private void pbDurum_Click(object sender, EventArgs e)
+        {
+            if (lbxVeriler.Visible == false)
+                lbxVeriler.Visible = true;
+            else
+                lbxVeriler.Visible = false;
+
         }
     }
 

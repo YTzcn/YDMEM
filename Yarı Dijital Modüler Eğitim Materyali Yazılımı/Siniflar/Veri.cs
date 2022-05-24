@@ -17,5 +17,6 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
         public string  SesVerisi { get; set; }
         public string  YaziVerisi { get; set; }
         public string  VideoVerisi { get; set; }
+        public IEnumerable<VeriSet> veriSets{ get; set; }
     }
 }

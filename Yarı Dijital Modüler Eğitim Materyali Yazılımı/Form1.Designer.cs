@@ -46,7 +46,9 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.btnLink = new System.Windows.Forms.Button();
             this.FList = new System.Windows.Forms.ImageList(this.components);
             this.pbDurum = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TKontrol = new System.Windows.Forms.Timer(this.components);
+            this.lbxVeriler = new System.Windows.Forms.ListBox();
+            this.spArduino = new System.IO.Ports.SerialPort(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,7 +202,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties.Resources._18E6_tmp;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 178);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,6 +263,28 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.pbDurum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDurum.TabIndex = 12;
             this.pbDurum.TabStop = false;
+            this.pbDurum.Click += new System.EventHandler(this.pbDurum_Click);
+            // 
+            // TKontrol
+            // 
+            this.TKontrol.Enabled = true;
+            this.TKontrol.Interval = 1000;
+            this.TKontrol.Tick += new System.EventHandler(this.TKontrol_Tick);
+            // 
+            // lbxVeriler
+            // 
+            this.lbxVeriler.CausesValidation = false;
+            this.lbxVeriler.FormattingEnabled = true;
+            this.lbxVeriler.ItemHeight = 20;
+            this.lbxVeriler.Location = new System.Drawing.Point(1276, 88);
+            this.lbxVeriler.Name = "lbxVeriler";
+            this.lbxVeriler.Size = new System.Drawing.Size(120, 124);
+            this.lbxVeriler.TabIndex = 13;
+            this.lbxVeriler.Visible = false;
+            // 
+            // spArduino
+            // 
+            this.spArduino.PortName = "COM5";
             // 
             // t
             // 
@@ -270,6 +294,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.BackgroundImage = global::Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties.Resources._20482556;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1407, 729);
+            this.Controls.Add(this.lbxVeriler);
             this.Controls.Add(this.pbDurum);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -312,7 +337,9 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         private System.Windows.Forms.Button btnLink;
         public System.Windows.Forms.ImageList FList;
         private System.Windows.Forms.PictureBox pbDurum;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer TKontrol;
+        private System.Windows.Forms.ListBox lbxVeriler;
+        private System.IO.Ports.SerialPort spArduino;
     }
 }
 
