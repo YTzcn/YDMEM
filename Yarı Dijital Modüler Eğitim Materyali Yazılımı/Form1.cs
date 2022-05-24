@@ -21,7 +21,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             btnSes.Enabled = false;
             btnYazi.Enabled = false;
             btnYT.Enabled = false;
-            
+
 
 
         }
@@ -132,19 +132,16 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
             btnYazi.BackgroundImage = Properties.Resources.Yazı;
         }
-        Form1
+        string[] pot;
+        string yazı;
         private void TKontrol_Tick(object sender, EventArgs e)
-
         {
-            
-            if ()
-            {
 
-            }
+
             spArduino.Open();
-            string yazı = spArduino.ReadLine();
-            yazı += spArduino.ReadLine();
-            string[] pot = yazı.Split('-');
+            yazı = spArduino.ReadLine();
+
+            pot = yazı.Split('-');
             for (int i = 0; i < pot.Length; i++)
             {
                 pot[i] = pot[i].Replace("{", "");
@@ -153,38 +150,14 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
 
             }
-            for (int i = 0; i < pot.Length; i++)
-            {
-                lbxVeriler.Items.Add(pot[i]);
-            }
-            lbxVeriler.Items.Clear();
-            if (lbxVeriler.SelectedIndex.ToString() == "-1")
-            {
-
-
-                for (int i = 0; i < pot.Length; i++)
-                {
-                    pot[i] = Convert.ToInt32(pot[i], 2).ToString();
-                    lbxVeriler.Items.Add(pot[i]);
-                }
-            }
-            else
-            {
-                btnFoto.Enabled = true;
-                btnLink.Enabled = true;
-                btnSes.Enabled = true;
-                btnYazi.Enabled = true;
-                btnYT.Enabled = true;
-
-
-            }
+            spArduino.DiscardInBuffer();
             spArduino.Close();
 
-
-
-
-
-
+            for (int i = 0; i < pot.Length; i++)
+            {
+                pot[i] = Convert.ToInt32(pot[i], 2).ToString();
+                lbxVeriler.Items.Add(pot[i]);
+            }
 
         }
 

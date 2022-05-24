@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -22,16 +25,16 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void Ayarlar_Load(object sender, EventArgs e)
         {
-           
-          
+
+
             var setler = context.VeriSets.ToList();
 
             foreach (var item in setler)
             {
-                listBox1.Items.Add(item.Id+" -"+item.SetAdı);
+                listBox1.Items.Add(item.Id + " -" + item.SetAdı);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            
+
 
         }
 
@@ -81,55 +84,75 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
+
 
         }
-        
+
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            
 
-        
-                if (tbxSetAdı.Text != string.Empty&&tbxSetAdı.Text != "" && tbxSetAdı.Text != " " && tbxSetAdı.Text != "Set Adını Girin")
+
+
+            if (tbxSetAdı.Text != string.Empty && tbxSetAdı.Text != "" && tbxSetAdı.Text != " " && tbxSetAdı.Text != "Set Adını Girin")
+            {
+                VeriSet veriSet = new VeriSet();
+                veriSet.SetAdı = tbxSetAdı.Text;
+                context.VeriSets.Add(veriSet);
+
+                tbxSetAdı.Visible = true;
+                listBox1.Items.Clear();
+                context.SaveChanges();
+                Ayarlar_Load(sender, e);
+
+                int[] dizi = { 000000, 000001, 000010, 000011, 000100, 000101, 000110, 000111, 001000, 001001, 001010, 001011, 001100, 001101, 001110, 001111, 010000, 010001, 010010, 010011, 010100, 010101, 010110, 010111, 011000, 011001, 011010, 011011, 011100, 011101, 011110, 011111, 100000, 100001, 100010, 100011, 100100, 100101, 100110, 100111, 101000, 101001, 101010, 101011, 101100, 101101, 101110, 101111, 110000, 110001, 110010, 110011, 110100, 110101, 110110, 110111, 111000, 111001, 111010, 111011, 111100, 111101, 111110, 111111 };
+
+                foreach (var item in dizi)
                 {
-                    VeriSet veriSet = new VeriSet();
-                    veriSet.SetAdı = tbxSetAdı.Text;
-                    context.VeriSets.Add(veriSet);
-                    tbxSetAdı.Clear();
-                    tbxSetAdı.Visible = true;
-                    listBox1.Items.Clear();
+                    Veri veris = new Veri();
+                    veris.SekilVerisi = item.ToString();
+                    var id = context.VeriSets.FirstOrDefault(X => X.SetAdı == tbxSetAdı.Text);
+                    veris.VeriSetId = id.Id;
+                    context.Veris.Add(veris);
                     context.SaveChanges();
-                    Ayarlar_Load(sender,e);                    
+
                 }
-          
+                //{ 000000,000001,000010,000011,000100,000101,000110,000111,001000,001001,001010,001011,001100,001101,001110,001111,010000,010001,010010,010011,010100,010101,010110,010111,011000,011001,011010,011011,011100,011101,011110,011111,100000,100001,100010,100011,100100,100101,100110,100111,101000,101001,101010,101011,101100,101101,101110,101111,110000,110001,110010,110011,110100,110101,110110,110111,111000,111001,111010,111011,111100,111101,111110,111111}
 
 
 
 
+            }
+
+
+
+
+            tbxSetAdı.Clear();
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        } 
+        }
         private void button1_Click_2(object sender, EventArgs e)
         {
-            string ıd = listBox1.Text;
+            string[] ıd = listBox1.Text.Split('-');
+            string arama = ıd[0];
+            var sekiller = context.Veris.Where(x => x.VeriSetId.ToString() == arama);
 
-            //foreach (var item in context.Veris.Select(x=>x.))
-            //{
+            foreach (var x in sekiller)
+            {
+                dataGridView1.Rows.Add(x.Id, x.BaglantıVerisi, x.FotografVerisi, x.SesVerisi, x.YaziVerisi, x.VideoVerisi);
+            }
 
-            //}
 
-         //dataGridView1.Rows.Add(x.Id, x.BaglantıVerisi, x.FotografVerisi, x.SesVerisi, x.YaziVerisi, x.VideoVerisi, Image.FromFile(@"~\Resources\Kaynaklar\" + x.Id + ".png"));
 
-            
+
         }
 
         private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            
+
         }
     }
 }

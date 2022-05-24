@@ -268,7 +268,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             // TKontrol
             // 
             this.TKontrol.Enabled = true;
-            this.TKontrol.Interval = 1000;
+            this.TKontrol.Interval = 3000;
             this.TKontrol.Tick += new System.EventHandler(this.TKontrol_Tick);
             // 
             // lbxVeriler
