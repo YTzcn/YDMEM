@@ -69,33 +69,51 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fotoğraf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotoğraf.Designer.cs">
+      <DependentUpon>Fotoğraf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Giriş.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Giriş.Designer.cs">
       <DependentUpon>Giriş.cs</DependentUpon>
     </Compile>
+    <Compile Include="Link.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Link.Designer.cs">
+      <DependentUpon>Link.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetOluştur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SetOluştur.Designer.cs">
-      <DependentUpon>SetOluştur.cs</DependentUpon>
-    </Compile>
     <Compile Include="Siniflar\Context.cs" />
     <Compile Include="Siniflar\Sekiller.cs" />
     <Compile Include="Siniflar\Veri.cs" />
     <Compile Include="Siniflar\VeriSet.cs" />
+    <Compile Include="Yazı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yazı.Designer.cs">
+      <DependentUpon>Yazı.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ayarlar.resx">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fotoğraf.resx">
+      <DependentUpon>Fotoğraf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giriş.resx">
       <DependentUpon>Giriş.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Link.resx">
+      <DependentUpon>Link.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,8 +125,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SetOluştur.resx">
-      <DependentUpon>SetOluştur.cs</DependentUpon>
+    <EmbeddedResource Include="Yazı.resx">
+      <DependentUpon>Yazı.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -255,6 +273,9 @@
     <Content Include="Resources\7.png" />
     <Content Include="Resources\8.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\add-image %281%29.png" />
+    <None Include="Resources\add-image.png" />
+    <None Include="Resources\icons8-search-in-browser-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

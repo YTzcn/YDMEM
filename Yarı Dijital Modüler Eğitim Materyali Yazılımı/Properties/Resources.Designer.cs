@@ -83,6 +83,26 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap add_image {
+            get {
+                object obj = ResourceManager.GetObject("add-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_image__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add-image (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap anasayfa {
             get {
                 object obj = ResourceManager.GetObject("anasayfa", resourceCulture);
@@ -136,6 +156,16 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Properties {
         internal static System.Drawing.Bitmap Green_Light_Icon_svg {
             get {
                 object obj = ResourceManager.GetObject("Green_Light_Icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_in_browser_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-in-browser-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

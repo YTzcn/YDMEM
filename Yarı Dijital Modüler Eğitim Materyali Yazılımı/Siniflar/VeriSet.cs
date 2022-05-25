@@ -13,6 +13,6 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar
         public int Id { get; set; }
         public string SetAdı{ get; set; }
 
-
+        public bool Aktiflik { get; set; }
     }
 }

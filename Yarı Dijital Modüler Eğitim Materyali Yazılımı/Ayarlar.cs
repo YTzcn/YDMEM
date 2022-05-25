@@ -21,7 +21,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         {
 
         }
-
+        int EskiAktif;
         private void Ayarlar_Load(object sender, EventArgs e)
         {
             DataGridViewImageColumn ımageColumn = new DataGridViewImageColumn();
@@ -39,7 +39,17 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             dataGridView1.Columns.Add(ımageColumn);
             dataGridView1.RowTemplate.MinimumHeight = 100;
 
+           
+            var setler = context.VeriSets.ToList();
 
+            var aktif = context.VeriSets.FirstOrDefault(x => x.Aktiflik == true);
+            label1.Text = "Aktif Set = "+aktif.SetAdı;
+            EskiAktif = aktif.Id;
+
+            foreach (var item in setler)
+            {
+                comboBox1.Items.Add(item.Id + " -" + item.SetAdı);
+            }
 
             Listele();
 
@@ -133,6 +143,11 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                 }
             }
             tbxSetAdı.Clear();
+            var setler = context.VeriSets.ToList();
+            foreach (var item in setler)
+            {
+                comboBox1.Items.Add(item.Id + " -" + item.SetAdı);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -188,6 +203,21 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                 i++;
 
             }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            var AktifDeğiştir = context.VeriSets.FirstOrDefault(x=>x.Id == EskiAktif);
+            AktifDeğiştir.Aktiflik = false;
+
+            string[] yeniAra = comboBox1.Text.Trim().Split('-');
+            int YeniIdİnt = Convert.ToInt32(yeniAra[0]);
+            var yeniId = context.VeriSets.FirstOrDefault(x=>x.Id == YeniIdİnt);
+            yeniId.Aktiflik = true;
+
+            context.SaveChanges();
+            var aktif = context.VeriSets.FirstOrDefault(x => x.Aktiflik == true);
+            label1.Text = "Aktif Set = " + aktif.SetAdı;
         }
     }
 }

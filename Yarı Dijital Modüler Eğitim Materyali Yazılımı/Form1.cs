@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Threading;
 using Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı.Siniflar;
 
 namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
@@ -16,11 +17,6 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnFoto.Enabled = false;
-            btnLink.Enabled = false;
-            btnSes.Enabled = false;
-            btnYazi.Enabled = false;
-            btnYT.Enabled = false;
 
 
 
@@ -77,7 +73,10 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void btnLink_Click(object sender, EventArgs e)
         {
-
+            if (spArduino.IsOpen)
+                spArduino.Close();
+            Link link = new Link();
+            link.Show();
         }
 
         private void btnLink_MouseEnter(object sender, EventArgs e)
@@ -137,42 +136,52 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
         private void TKontrol_Tick(object sender, EventArgs e)
         {
 
-
-            spArduino.Open();
-            yazı = spArduino.ReadLine();
-
-            pot = yazı.Split('-');
-            for (int i = 0; i < pot.Length; i++)
+            try
             {
-                pot[i] = pot[i].Replace("{", "");
-                pot[i] = pot[i].Replace("}", "");
-                pot[i] = pot[i].Replace("\r", "");
+
+                spArduino.Open();
+                Thread.Sleep(400);
+                yazı = spArduino.ReadLine();
+                pot = yazı.Split('-');
+                for (int i = 0; i < pot.Length; i++)
+                {
+                    pot[i] = pot[i].Replace("{", "");
+                    pot[i] = pot[i].Replace("}", "");
+                    pot[i] = pot[i].Replace("\r", "");
 
 
+                }
+                spArduino.DiscardInBuffer();
+                spArduino.Close();
+             
             }
-            spArduino.DiscardInBuffer();
-            spArduino.Close();
-
-            for (int i = 0; i < pot.Length; i++)
+            catch (Exception)
             {
-                pot[i] = Convert.ToInt32(pot[i], 2).ToString();
-                lbxVeriler.Items.Add(pot[i]);
+
+                
             }
+
+
+
 
         }
 
         private void pbDurum_Click(object sender, EventArgs e)
         {
-            if (lbxVeriler.Visible == false)
-                lbxVeriler.Visible = true;
-            else
-                lbxVeriler.Visible = false;
+            
 
         }
 
         private void btnFoto_Click(object sender, EventArgs e)
         {
+            Fotoğraf fotoğraf = new Fotoğraf();
+            fotoğraf.Show();
+        }
 
+        private void btnYazi_Click(object sender, EventArgs e)
+        {
+            Yazı yazı = new Yazı();
+            yazı.Show();
         }
     }
 
