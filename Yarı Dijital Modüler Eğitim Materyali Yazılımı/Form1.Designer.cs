@@ -104,6 +104,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.btnFoto.Size = new System.Drawing.Size(253, 234);
             this.btnFoto.TabIndex = 7;
             this.btnFoto.UseVisualStyleBackColor = false;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             this.btnFoto.MouseEnter += new System.EventHandler(this.btnFoto_MouseEnter);
             this.btnFoto.MouseLeave += new System.EventHandler(this.btnFoto_MouseLeave);
             // 

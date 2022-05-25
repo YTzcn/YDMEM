@@ -169,6 +169,11 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                 lbxVeriler.Visible = false;
 
         }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
