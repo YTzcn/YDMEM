@@ -54,7 +54,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             // 
             // spArduino
             // 
-            this.spArduino.PortName = "COM5";
+            this.spArduino.PortName = "COM4";
             // 
             // label3
             // 

@@ -39,13 +39,15 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             dataGridView1.Columns.Add(ımageColumn);
             dataGridView1.RowTemplate.MinimumHeight = 100;
 
-           
+
             var setler = context.VeriSets.ToList();
 
             var aktif = context.VeriSets.FirstOrDefault(x => x.Aktiflik == true);
-            label1.Text = "Aktif Set = "+aktif.SetAdı;
-            EskiAktif = aktif.Id;
-
+            if (setler.Count != 0)
+            {
+                label1.Text = "Aktif Set = " + aktif.SetAdı;
+                EskiAktif = aktif.Id;
+            }
             foreach (var item in setler)
             {
                 comboBox1.Items.Add(item.Id + " -" + item.SetAdı);
@@ -125,6 +127,11 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             {
                 VeriSet veriSet = new VeriSet();
                 veriSet.SetAdı = tbxSetAdı.Text;
+                var setler1 = context.VeriSets.ToList();
+                if (setler1.Count == 0)
+                {
+                    veriSet.Aktiflik = true;
+                }
                 context.VeriSets.Add(veriSet);
 
                 tbxSetAdı.Visible = true;
@@ -141,6 +148,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                     context.Veris.Add(veris);
                     context.SaveChanges();
                 }
+
             }
             tbxSetAdı.Clear();
             var setler = context.VeriSets.ToList();
@@ -207,12 +215,13 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            var AktifDeğiştir = context.VeriSets.FirstOrDefault(x=>x.Id == EskiAktif);
-            AktifDeğiştir.Aktiflik = false;
+            var AktifDeğiştir = context.VeriSets.FirstOrDefault(x => x.Id == EskiAktif);
+            if (AktifDeğiştir != null)
+                AktifDeğiştir.Aktiflik = false;
 
             string[] yeniAra = comboBox1.Text.Trim().Split('-');
             int YeniIdİnt = Convert.ToInt32(yeniAra[0]);
-            var yeniId = context.VeriSets.FirstOrDefault(x=>x.Id == YeniIdİnt);
+            var yeniId = context.VeriSets.FirstOrDefault(x => x.Id == YeniIdİnt);
             yeniId.Aktiflik = true;
 
             context.SaveChanges();

@@ -57,7 +57,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             // 
             // spArduino
             // 
-            this.spArduino.PortName = "COM5";
+            this.spArduino.PortName = "COM4";
             // 
             // label3
             // 
@@ -151,7 +151,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Yazı";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yazı";

@@ -38,7 +38,7 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                 pot[i] = pot[i].Replace("\r", "");
                 string veri = pot[i].ToString();
                 var BaglantıVerisi = context.Veris.Where(x => x.VeriSetId == AktifSet.Id);
-
+                pot[1] = pot[1].Remove(5, 2);
                 var deneme = BaglantıVerisi.FirstOrDefault(x => x.SekilVerisi == veri);
                 pot[i] = deneme.BaglantıVerisi;
             }
@@ -60,9 +60,10 @@ namespace Yarı_Dijital_Modüler_Eğitim_Materyali_Yazılımı
                 pot[i] = pot[i].Replace("\r", "");
                 string veri = pot[i].ToString();
                 var BaglantıVerisi = context.Veris.Where(x => x.VeriSetId == AktifSet.Id);
-
+                pot[1] = pot[1].Remove(5, 2);
                 var deneme = BaglantıVerisi.FirstOrDefault(x => x.SekilVerisi == veri);
                 pot[i] = deneme.BaglantıVerisi;
+                
             }
 
             spArduino.DiscardInBuffer();
